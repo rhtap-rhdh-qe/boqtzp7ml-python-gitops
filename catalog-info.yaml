@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: boqtzp7ml-python-gitops
+  description: This is GitOps manifest for boqtzp7ml-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=boqtzp7ml-python
+    backstage.io/kubernetes-id: boqtzp7ml-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: boqtzp7ml-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:boqtzp7ml-python
